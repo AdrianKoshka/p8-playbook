@@ -1,0 +1,22 @@
+---
+    - name: Upgrade all Packages
+      become: yes
+      dnf:
+        name: '*'
+        state: latest
+
+    - name: Install all packages
+      become: yes
+      dnf:
+        name: 
+          - '@Virtualization'
+          - vim
+          - htop
+          - lm_sensors
+          - nvme-cli 
+          - podman
+          - buildah 
+          - hwloc 
+          - dnf-plugin-system-upgrade
+          - cockpit-machines
+        state: present

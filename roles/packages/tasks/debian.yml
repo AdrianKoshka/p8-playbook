@@ -1,0 +1,23 @@
+---
+    - name: Upgrade Package Cache
+      become: yes
+      apt:  
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Upgrade Packages
+      become: yes
+      apt:
+        name: '*'
+        state: latest
+
+    - name: Install Packages
+      become: yes
+      apt:
+        name:
+           - make
+           - htop
+           - docker.io
+           - docker-compose
+           - vim
+        state: present

@@ -1,0 +1,7 @@
+- name: adding existing user "{{ ansible_user }}" to groups libvirt
+  become: yes
+  user:
+    name: "{{ ansible_user }}"
+    groups: libvirt
+    append: yes
+    

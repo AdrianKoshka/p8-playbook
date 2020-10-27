@@ -1,0 +1,8 @@
+---
+    - name: Upgrade all Packages on Fedora
+      import_tasks: fedora.yml
+      when: ansible_distribution|lower == 'fedora'
+
+    - name: Upgrade all Packages on Debian VM
+      import_tasks: debian.yml
+      when: ansible_distribution|lower == 'debian'

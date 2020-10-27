@@ -1,0 +1,8 @@
+---
+  - hosts: eeo,eeovms
+    accelerate: true
+    remote_user: alc
+    roles:
+     - packages
+     #- services
+     #- userconfig
