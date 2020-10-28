@@ -1,42 +1,8 @@
-    - name: Set smt_off.service to enabled
-      become: yes
-      systemd:
-        state: started
-        enabled: yes
-        name: smt_off
+---
+    - name: Upgrade all Packages on Fedora
+      import_tasks: fedora.yml
+      when: ansible_distribution|lower == 'fedora'
 
-    - name: Copy intel-vfs service file
-      become: yes
-      copy:
-         src: intel-vfs.service
-         dest: /etc/systemd/system/intel-vfs.service
-         owner: root
-         group: root
-         seuser: _default
-         serole: _default
-         setype: _default
-         checksum: b86edb0b2c8fbe70851dfc72269014d68f8ad83f
-
-    - name: Copy 50-blacklist.conf file
-      become: yes
-      copy:
-         src: 50-blacklist.conf
-         dest: /etc/modprobe.d/50-blacklist.conf
-         owner: root
-         group: root
-         seuser: _default
-         serole: _default
-         setype: _default
-         checksum: b51f1d824e36d579c26256b39cbf8bf8ea97b34f
-
-    - name: Reload systemd services
-      become: yes
-      systemd:
-        daemon_reload: yes
-
-    - name: Set intel-vfs.service to enabled
-      become: yes
-      systemd:
-        state: started
-        enabled: yes
-        name: intel-vfs
+    - name: Upgrade all Packages on Debian VM
+      import_tasks: debian.yml
+      when: ansible_distribution|lower == 'debian'

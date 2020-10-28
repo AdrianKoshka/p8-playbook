@@ -1,0 +1,6 @@
+    - name: Set libvirt.service to enabled
+      become: yes
+      systemd:
+        state: started
+        enabled: yes
+        name: libvirtd.service

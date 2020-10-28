@@ -1,0 +1,20 @@
+    - name: Set smt_off.service to enabled
+      become: yes
+      systemd:
+        state: started
+        enabled: yes
+        name: smt_off
+
+    - name: Set intel-vfs.service to enabled
+      become: yes
+      systemd:
+        state: started
+        enabled: yes
+        name: intel-vfs
+
+    - name: Set avahi-daemon.service to enabled
+      become: yes
+      systemd:
+        state: started
+        enabled: yes
+        name: avahi-daemon
