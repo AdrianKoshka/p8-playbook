@@ -19,4 +19,7 @@
           - hwloc 
           - dnf-plugin-system-upgrade
           - cockpit-machines
+          - nss-mdns
+          - avahi
+          - avahi-tools
         state: present
