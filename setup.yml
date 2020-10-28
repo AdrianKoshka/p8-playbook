@@ -2,7 +2,8 @@
   - hosts: eeo,eeovms
     remote_user: alc
     roles:
-      - packages
+     - packages
      #- intelvfsfiles
-      - services
+     - services
      #- userconfig
+     - firewalldcfg
