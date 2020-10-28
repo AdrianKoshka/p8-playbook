@@ -1,0 +1,12 @@
+[Unit]
+Description=ppc64 set SMT off
+Before=libvirtd.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/usr/bin/bash -c "echo 16 > /sys/class/net/enP2p1s0f0/device/sriov_numvfs"
+ExecStop=/usr/bin/bash -c "echo 0 > /sys/class/net/enP2p1s0f0/device/sriov_numvfs"
+
+[Install]
+WantedBy=multi-user.target
