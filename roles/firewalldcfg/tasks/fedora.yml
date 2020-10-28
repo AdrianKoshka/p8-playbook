@@ -1,0 +1,21 @@
+---
+    - name: permit mDNS traffic in default zone
+      become: yes
+      firewalld:
+        service: mdns
+        permanent: yes
+        state: enabled
+
+    - name: permit ssh traffic in default zone
+      become: yes
+      firewalld:
+        service: ssh
+        permanent: yes
+        state: enabled
+
+    - name: permit cockpit traffic in default zone
+      become: yes
+      firewalld:
+        service: cockpit
+        permanent: yes
+        state: enabled

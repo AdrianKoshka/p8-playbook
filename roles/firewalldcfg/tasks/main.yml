@@ -1,0 +1,4 @@
+---
+    - name: Configure Firewalld
+      import_tasks: fedora.yml
+      when: ansible_distribution|lower == 'fedora'
