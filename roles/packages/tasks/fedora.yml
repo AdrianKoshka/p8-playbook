@@ -22,4 +22,5 @@
           - nss-mdns
           - avahi
           - avahi-tools
+          - ksmtuned
         state: present

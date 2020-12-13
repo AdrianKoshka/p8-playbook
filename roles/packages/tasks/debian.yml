@@ -20,4 +20,8 @@
            - docker.io
            - docker-compose
            - vim
+           - apt-transport-https
+           - avahi-daemon
+           - avahi-discover
+           - libnss-mdns
         state: present
